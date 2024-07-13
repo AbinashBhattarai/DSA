@@ -1,0 +1,31 @@
+GFG
+
+Q:
+Find all factorial numbers less than or equal to n
+
+
+Sol: (C#)
+
+(Normal Approach)
+class Solution {
+    // Complete this function
+    //  The Function should be inside the class Solution
+    public List<long> factorialNumbers(long n) {
+        // Write Your Code here
+        
+        List<long> nums = new List<long>();
+        long fact = 1;
+        
+        for(int i=1; i<=n; i++){
+            fact = fact * i;
+            
+            if(fact > n){
+                return nums;
+            }
+            nums.Add(fact);
+        }
+        return nums;
+    }
+}
+
+(Recursive Approach)

@@ -1,0 +1,22 @@
+GFG
+
+Q:
+Print 1 To N Without Loop
+
+Sol: (C#)
+class Solution
+{
+    //Complete this function
+    //Function to print numbers from 1 to N.
+    public void printNos(int N)
+    {
+        //Your code here
+        if(N < 1){
+            return;
+        }
+        
+        printNos(N-1);
+        Console.Write(N + " ");
+    }
+}
+
