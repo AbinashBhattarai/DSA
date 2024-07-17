@@ -1,96 +1,65 @@
-﻿// Find the number of occurence
+﻿// Find the number of occurence of characters and numbers
 class Program{
     public static void Main(){
         
-        // int[] arr = [1,3,2,4,1,3,5];
-        // int[] query = [1,2,3,4,5];
-        // Check(arr, query);
+        int[] numbers = [1,3,2,4,1,3,5];        
+        string letters = "abfgabdd";
+        Check(numbers, letters);
+    }
+
+    // Using normal array
+    /*
+    public static void Check(int[] num, string ltr){
+        int[] countNum = new int[num.Length+1];
+        int[] countLtr = new int[26];
+
+        for(int i=0; i<num.Length; i++){
+            countNum[num[i]]+=1; 
+        }
+
+        for(int i=0; i<ltr.Length; i++){
+            countLtr[ltr[i]-'a']+=1; 
+        }
+
+        Console.WriteLine("Number \t\t\t Occurence");
+        for(int i=0; i<countNum.Length; i++){
+            Console.WriteLine($"{i} \t\t\t {countNum[i]}");
+        }
         
-        string s = "abfgabdd";
-        char[] query = ['a', 'b', 'd', 'f', 'g'];
-        Check(s, query);
+        Console.WriteLine("\nLetter \t\t\t Occurence");
+        for(int i=0; i<countLtr.Length; i++){
+            Console.WriteLine($"{i+'a'} \t\t\t {countLtr[i]}");
+        }
     }
-
-    // Numbers (Normal hashing approach)
-    /*
-    public static void Check(int[] a, int[] q){
-        int[] count = new int[a.Length+1];
+    */
 
 
-        for(int i=0; i<a.Length; i++){
-            count[a[i]]+=1; 
+    // Using Dictionary
+    
+    public static void Check(int[] num, string ltr){
+
+        Dictionary<int, int> countNum = new Dictionary<int, int>();
+        Dictionary<char, int> countLtr = new Dictionary<char, int>();
+
+        foreach (int n in num)
+        {
+            countNum.TryGetValue(n, out int value);
+            countNum[n] = value+1;
         }
 
+        foreach(char c in ltr){
+            countLtr.TryGetValue(c, out int value);
+            countLtr[c] = value+1;
+        }
 
-        foreach(int elem in q){
-            Console.WriteLine(count[elem]);
+        Console.WriteLine("\nNumber \t\t\t Occurence");
+        foreach(var i in countNum){
+            Console.WriteLine($"{i.Key} \t\t\t {i.Value}");
         }
         
-    }
-    */
-
-    // String (Normal hashing approach)
-    /*
-    public static void Check(string s, char[] q){
-        int[] count = new int[26];
-
-
-        for(int i=0; i<s.Length; i++){
-            count[s[i]-'a']+=1; 
-        }
-
-
-        foreach(int elem in q){
-            Console.WriteLine(count[elem - 'a']);
-        }
-    }
-    */
-
-
-    // Using Dictionary (Numbers)
-    /*
-    public static void Check(int[] a, int[] q){
-
-        Dictionary<int, int> count = [];
-
-        foreach (int i in a)
-        {
-            if (!count.ContainsKey(i))
-            {
-                count.Add(i, 1);
-            }
-            else
-            {
-                count[i]++;
-            }
-        }
-
-
-        foreach (int elem in q)
-        {
-            Console.WriteLine(count[elem]);
-        }
-    }
-    */
-
-    // Using Dictionary (String)
-
-    public static void Check(string s, char[] q){
-        Dictionary<char, int> count = [];
-
-
-        foreach(char c in s){
-            if(!count.ContainsKey(c)){
-                count.Add(c, 1);
-            }
-            else{
-                count[c]++;
-            }
-        }
-
-
-        foreach(char ch in q){
-            Console.WriteLine(count[ch]);
+        Console.WriteLine("\nLetter \t\t\t Occurence");
+        foreach(var i in countLtr){
+            Console.WriteLine($"{i.Key} \t\t\t {i.Value}");
         }
     }
 }
