@@ -13,7 +13,7 @@ public class OddEven
 {
     public static void main(String[] args)
     {
-        int number = 8;
+        int number = 9;
 
         if(number % 2 == 0)
         {
