@@ -4,7 +4,7 @@ Question: Check whether a year is a Leap Year
 Explanation:
 - if divisible by 4 may be a leap year
 - but must not be disible by 100
-- after above condition if the year is divisible by 400 it is a leap year
+- A year divisible by 400 is a leap year, even if it is divisible by 100.
 
 TC = O(1)
 SC = O(1)

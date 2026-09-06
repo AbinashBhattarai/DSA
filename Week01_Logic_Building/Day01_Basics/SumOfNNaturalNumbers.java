@@ -9,6 +9,10 @@ Explanation:
 
 TC = O(n)
 SC = O(1)
+
+And simply we can use formula also n*(n+1)/2
+TC = O(1)
+SC = O(1) 
 */
 
 
@@ -16,12 +20,16 @@ public class SumOfNNaturalNumbers
 {
     public static void main(String[] args)
     {
-        int num = 10;
+        int num = 11;
         int sum = 0;
         for(int i=1; i<=num; i++)
         {
             sum += i;
         }
+
+        int numSum = num * (num+1) / 2; //using formula
+
         System.out.println("The sum from 1 to " + num + " is " + sum);
+        System.out.println("The sum from 1 to " + num + " is " + numSum);
     }
 }
