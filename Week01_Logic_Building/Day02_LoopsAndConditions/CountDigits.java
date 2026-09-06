@@ -14,7 +14,7 @@ public class CountDigits
 {
     public static void main(String[] args)
     {
-        int num = -112233;
+        int num = 112233;
         int count = 0;
 
         //check negative condition
