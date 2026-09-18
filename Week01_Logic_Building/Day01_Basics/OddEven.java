@@ -1,13 +1,4 @@
-/*
-Question: Check whether a number is Even or Odd
-
-Explanation: 
-- use modulo operator(%) on given number
-- if the result is 0 -> Even else Odd.
-
-TC = O(1)
-SC - O(1)
-*/
+//Question: Check if the number is Even or Odd
 
 public class OddEven
 {
